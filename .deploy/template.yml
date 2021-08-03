@@ -1,0 +1,34 @@
+ROSTemplateFormatVersion: '2015-09-01'
+Transform: 'Aliyun::Serverless-2018-04-03'
+Resources:
+  iptv:
+    Type: 'Aliyun::Serverless::Service'
+    Properties:
+      Description: 'IPTV服务'
+    index:
+      Type: 'Aliyun::Serverless::Function'
+      Properties:
+        Handler: main
+        Runtime: custom
+        CodeUri: './'
+        EnvironmentVariables:
+          TZ: 'Asia/Shanghai'
+      Events:
+        httpTrigger:
+          Type: HTTP
+          Properties:
+            AuthType: ANONYMOUS
+            Methods: [ 'GET' ]
+  iptv.fun.dongfg.com:
+    Type: 'Aliyun::Serverless::CustomDomain'
+    Properties:
+      Protocol: HTTP,HTTPS
+      CertConfig:
+        CertName: 'iptv_fun_dongfg_com'
+        PrivateKey: './ssl.private.pem'
+        Certificate: './ssl.cert.pem'
+      RouteConfig:
+        Routes:
+          '/*':
+            ServiceName: iptv
+            FunctionName: index
