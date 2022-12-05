@@ -1,0 +1,55 @@
+include:
+- src.zip
+kind: ArchiveUploadSpec
+name: src-zip-K93y
+
+---
+apiVersion: fission.io/v1
+kind: Package
+metadata:
+  creationTimestamp: null
+  name: func-iptv-805974a0-ed31-4157-b904-916a6fc516ef
+  namespace: default
+spec:
+  deployment:
+    checksum: {}
+  environment:
+    name: go
+    namespace: default
+  source:
+    checksum: {}
+    type: url
+    url: archive://src-zip-K93y
+status:
+  buildstatus: pending
+  lastUpdateTimestamp: "2022-12-05T00:44:12Z"
+
+---
+apiVersion: fission.io/v1
+kind: Function
+metadata:
+  creationTimestamp: null
+  name: func-iptv
+  namespace: default
+spec:
+  InvokeStrategy:
+    ExecutionStrategy:
+      ExecutorType: poolmgr
+      MaxScale: 0
+      MinScale: 0
+      SpecializationTimeout: 120
+      TargetCPUPercent: 0
+    StrategyType: execution
+  concurrency: 500
+  environment:
+    name: go
+    namespace: default
+  functionTimeout: 60
+  idletimeout: 120
+  package:
+    functionName: Handler
+    packageref:
+      name: func-iptv-805974a0-ed31-4157-b904-916a6fc516ef
+      namespace: default
+  requestsPerPod: 1
+  resources: {}

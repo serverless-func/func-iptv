@@ -1,0 +1,25 @@
+apiVersion: fission.io/v1
+kind: HTTPTrigger
+metadata:
+  creationTimestamp: null
+  name: func-iptv
+  namespace: default
+spec:
+  createingress: true
+  functionref:
+    functionweights: null
+    name: func-iptv
+    type: name
+  host: ""
+  ingressconfig:
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt-dongfg
+      nginx.ingress.kubernetes.io/use-regex: "true"
+    host: iptv.func.dongfg.com
+    path: /*
+    tls: tls-iptv-func-dongfg
+  method: ""
+  methods:
+  - GET
+  prefix: ""
+  relativeurl: /{Subpath}
