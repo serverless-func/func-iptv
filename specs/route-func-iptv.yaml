@@ -14,9 +14,8 @@ spec:
   ingressconfig:
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt-dongfg
-      nginx.ingress.kubernetes.io/use-regex: "true"
     host: iptv.func.dongfg.com
-    path: /*
+    path: /
     tls: tls-iptv-func-dongfg
   method: ""
   methods:

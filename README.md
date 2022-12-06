@@ -11,3 +11,13 @@
 | ----------- | ------------------------------------ |
 | CCTV 频道   | https://iptv.fun.dongfg.com/cctv.m3u |
 | CCTV 节目单 | https://iptv.fun.dongfg.com/cctv.xml |
+
+### Deployment
+
+## Development
+
+```shell
+fission spec init
+fission fn create --spec --name func-iptv --src src.zip --entrypoint Handler --env go --buildcmd "./customBuild.sh"
+fission route create --spec --method GET --name func-iptv --url /{Subpath} --function func-iptv --createingress  --ingressrule "iptv.func.dongfg.com=/" --ingresstls "tls-iptv-func-dongfg" --ingressannotation "cert-manager.io/cluster-issuer=letsencrypt-dongfg"
+```
