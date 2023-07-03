@@ -1,5 +1,5 @@
 include:
-- src.zip
+  - src.zip
 kind: ArchiveUploadSpec
 name: src-zip-K93y
 
@@ -9,13 +9,13 @@ kind: Package
 metadata:
   creationTimestamp: null
   name: func-iptv-805974a0-ed31-4157-b904-916a6fc516ef
-  namespace: default
+  namespace: fission
 spec:
   deployment:
     checksum: {}
   environment:
     name: go
-    namespace: default
+    namespace: fission
   source:
     checksum: {}
     type: url
@@ -30,7 +30,7 @@ kind: Function
 metadata:
   creationTimestamp: null
   name: func-iptv
-  namespace: default
+  namespace: fission
 spec:
   InvokeStrategy:
     ExecutionStrategy:
@@ -43,13 +43,13 @@ spec:
   concurrency: 500
   environment:
     name: go
-    namespace: default
+    namespace: fission
   functionTimeout: 60
   idletimeout: 120
   package:
     functionName: Handler
     packageref:
       name: func-iptv-805974a0-ed31-4157-b904-916a6fc516ef
-      namespace: default
+      namespace: fission
   requestsPerPod: 1
   resources: {}

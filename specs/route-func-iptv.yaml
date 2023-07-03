@@ -3,7 +3,7 @@ kind: HTTPTrigger
 metadata:
   creationTimestamp: null
   name: func-iptv
-  namespace: default
+  namespace: fission
 spec:
   createingress: true
   functionref:
@@ -19,6 +19,6 @@ spec:
     tls: tls-iptv-func-dongfg
   method: ""
   methods:
-  - GET
+    - GET
   prefix: ""
   relativeurl: /{Subpath}
