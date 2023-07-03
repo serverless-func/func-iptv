@@ -27,7 +27,7 @@ pipeline {
           reuseNode 'true'
           registryUrl 'https://dongfg-docker.pkg.coding.net'
           registryCredentialsId "${env.DOCKER_REGISTRY_CREDENTIALS_ID}"
-          image 'serverless-func/docker/fission-cli:1.17.0'
+          image 'serverless-func/docker/fission-cli:latest'
         }
       }
       when {
