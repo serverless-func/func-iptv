@@ -3,14 +3,14 @@ kind: HTTPTrigger
 metadata:
   creationTimestamp: null
   name: func-iptv
-  namespace: default
+  namespace: fission
 spec:
   createingress: true
   functionref:
     functionweights: null
     name: func-iptv
     type: name
-  host: "iptv.func.dongfg.com"
+  host: ""
   ingressconfig:
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt-dongfg
