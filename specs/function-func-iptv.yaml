@@ -1,16 +1,17 @@
 include:
-  - src.zip
+- src.zip
 kind: ArchiveUploadSpec
-name: src-zip-K93y
+name: src-zip-Gt2V
 
 ---
 apiVersion: fission.io/v1
 kind: Package
 metadata:
   creationTimestamp: null
-  name: func-iptv-805974a0-ed31-4157-b904-916a6fc516ef
+  name: func-iptv-0ba4a0ab-ea57-45db-a3fa-ff05345b77f6
   namespace: fission
 spec:
+  buildcmd: ./customBuild.sh
   deployment:
     checksum: {}
   environment:
@@ -19,10 +20,10 @@ spec:
   source:
     checksum: {}
     type: url
-    url: archive://src-zip-K93y
+    url: archive://src-zip-Gt2V
 status:
   buildstatus: pending
-  lastUpdateTimestamp: "2022-12-05T00:44:12Z"
+  lastUpdateTimestamp: "2023-07-03T07:34:58Z"
 
 ---
 apiVersion: fission.io/v1
@@ -49,7 +50,7 @@ spec:
   package:
     functionName: Handler
     packageref:
-      name: func-iptv-805974a0-ed31-4157-b904-916a6fc516ef
+      name: func-iptv-0ba4a0ab-ea57-45db-a3fa-ff05345b77f6
       namespace: fission
   requestsPerPod: 1
   resources: {}

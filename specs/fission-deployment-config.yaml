@@ -4,4 +4,4 @@
 apiVersion: fission.io/v1
 kind: DeploymentConfig
 name: func-iptv
-uid: d04de8cd-b45d-4932-9dc9-1bc518e93823
+uid: 5e8be33b-fea5-4dfe-bed9-9ed3dfa134d0

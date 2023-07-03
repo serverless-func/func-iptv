@@ -17,7 +17,7 @@
 ## Development
 
 ```shell
-fission spec init
-fission fn create --spec --name func-iptv --src src.zip --entrypoint Handler --env go --buildcmd "./customBuild.sh"
-fission route create --spec --method GET --name func-iptv --url /{Subpath} --function func-iptv --createingress  --ingressrule "iptv.func.dongfg.com=/" --ingresstls "tls-iptv-func-dongfg" --ingressannotation "cert-manager.io/cluster-issuer=letsencrypt-dongfg"
+fission -n fission spec init
+fission -n fission fn create --spec --name func-iptv --src src.zip --entrypoint Handler --env go --buildcmd "./customBuild.sh"
+fission -n fission route create --spec --method GET --name func-iptv --url /{Subpath} --function func-iptv --createingress  --ingressrule "iptv.func.dongfg.com=/" --ingresstls "tls-iptv-func-dongfg" --ingressannotation "cert-manager.io/cluster-issuer=letsencrypt-dongfg"
 ```

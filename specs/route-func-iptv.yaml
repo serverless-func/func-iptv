@@ -10,7 +10,7 @@ spec:
     functionweights: null
     name: func-iptv
     type: name
-  host: "iptv.func.dongfg.com"
+  host: ""
   ingressconfig:
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt-dongfg
@@ -19,6 +19,6 @@ spec:
     tls: tls-iptv-func-dongfg
   method: ""
   methods:
-    - GET
+  - GET
   prefix: ""
   relativeurl: /{Subpath}
