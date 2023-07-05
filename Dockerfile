@@ -19,7 +19,7 @@ RUN GOOS=linux go build -o /bin/app .
 FROM alpine
 LABEL maintainer="mail@dongfg.com"
 
-RUN sed -i "s@http://dl-cdn.alpinelinux.org/@https://repo.huaweicloud.com/@g" /etc/apk/repositories && \
+RUN sed -i "s@https://dl-cdn.alpinelinux.org/@https://repo.huaweicloud.com/@g" /etc/apk/repositories && \
     apk update && \
     apk add --no-cache tzdata
 
