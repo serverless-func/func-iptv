@@ -101,6 +101,8 @@ func safeSend(ch chan *fastResp, value *fastResp) (closed bool) {
 			closed = true
 		}
 	}()
-	ch <- value
+	if value.Error == "" {
+		ch <- value
+	}
 	return false
 }
