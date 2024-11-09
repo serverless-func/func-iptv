@@ -28,4 +28,4 @@ jobs:
           cache-from: type=registry,ref=${{ env.IMAGE_NAME }}:latest
           cache-to: type=inline
           build-args:
-            - VERSION: ${{ github.ref_name }}
+            - VERSION=${{ github.ref_name }}
