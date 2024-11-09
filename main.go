@@ -19,6 +19,8 @@ type fetchConfig struct {
 	Hour     int64  `form:"hour"`
 }
 
+var Version = "dev"
+
 func main() {
 	r := gin.New()
 	r.Use(gin.Recovery())
@@ -32,6 +34,9 @@ func main() {
 }
 
 func setupRouter(r *gin.Engine) {
+	r.GET("/", func(c *gin.Context) {
+		c.Data(http.StatusOK, "text/plain; charset=utf-8", []byte("func-iptv@" + Version))
+	})
 	r.GET("/ping", func(c *gin.Context) {
 		c.Data(http.StatusOK, "text/plain; charset=utf-8", []byte("pong"))
 	})

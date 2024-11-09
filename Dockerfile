@@ -1,3 +1,7 @@
+# syntax=docker/dockerfile:1
+
+ARG VERSION="docker"
+
 FROM golang:alpine as builder
 
 ARG USE_MIRROR
@@ -17,7 +21,7 @@ RUN go mod download
 
 COPY . .
 
-RUN GOOS=linux go build -o /bin/app .
+RUN GOOS=linux go build -ldflags="-X 'main.Version=${VERSION}'" -o /bin/app .
 
 FROM alpine
 LABEL maintainer="mail@dongfg.com"
