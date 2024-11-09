@@ -21,7 +21,7 @@ RUN go mod download
 
 COPY . .
 ENV VERSION=${VERSION}
-RUN GOOS=linux go build -ldflags="-X 'main.Version=${VERSION}'" -o /bin/app .
+RUN GOOS=linux go build -ldflags="-X main.Version=$VERSION" -o /bin/app .
 
 FROM alpine
 LABEL maintainer="mail@dongfg.com"
