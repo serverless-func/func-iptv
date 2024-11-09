@@ -13,13 +13,13 @@ var cctv = []channel{
 		epg:  "https://raw.githubusercontent.com/BurningC4/Chinese-IPTV/master/guide.xml",
 	},
 	{
-		name: "FastGit",
-		m3u:  "https://raw.fastgit.org/BurningC4/Chinese-IPTV/master/TV-IPV4.m3u",
-		epg:  "https://raw.fastgit.org/BurningC4/Chinese-IPTV/master/guide.xml",
+		name: "gh-proxy",
+		m3u:  "https://gh-proxy.com/raw.githubusercontent.com/BurningC4/Chinese-IPTV/master/TV-IPV4.m3u",
+		epg:  "https://gh-proxy.com/raw.githubusercontent.com/BurningC4/Chinese-IPTV/master/guide.xml",
 	},
 	{
-		name: "GitHub Proxy",
-		m3u:  "https://ghproxy.com/https://raw.githubusercontent.com/BurningC4/Chinese-IPTV/master/TV-IPV4.m3u",
-		epg:  "https://ghproxy.com/https://raw.githubusercontent.com/BurningC4/Chinese-IPTV/master/guide.xml",
+		name: "ghp.ci",
+		m3u:  "https://ghp.ci/https://raw.githubusercontent.com/BurningC4/Chinese-IPTV/master/TV-IPV4.m3u",
+		epg:  "https://ghp.ci/https://raw.githubusercontent.com/BurningC4/Chinese-IPTV/master/guide.xml",
 	},
 }
